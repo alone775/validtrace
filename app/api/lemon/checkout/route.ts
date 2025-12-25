@@ -38,9 +38,9 @@ export async function POST(request: NextRequest) {
           },
         },
         productOptions: {
-          redirectUrl: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/dashboard/settings`,
+          redirectUrl: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/dashboard/settings?success=true`,
           receiptButtonText: 'Go to Dashboard',
-          receiptThankYouNote: 'Thank you for your purchase!',
+          receiptThankYouNote: 'Thank you for upgrading to Pro! You now have unlimited access to all features.',
         },
       }
     )

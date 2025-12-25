@@ -81,5 +81,6 @@ export default function DashboardNav({ user, profile }: DashboardNavProps) {
         </div>
       </div>
     </div>
+    </>
   )
 }
