@@ -36,7 +36,7 @@ export default function SubscriptionCard({
     },
     pro: {
       name: 'Pro',
-      price: '$9/month',
+      price: '$5/month',
       limits: {
         projects: Infinity,
         sessions: Infinity,
@@ -228,7 +228,7 @@ export default function SubscriptionCard({
             disabled={loading}
             className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
           >
-            {loading ? 'Processing...' : 'Upgrade to Pro - $9/month'}
+            {loading ? 'Processing...' : 'Upgrade to Pro - $5/month'}
           </button>
           <button
             onClick={() => handleUpgrade('enterprise')}

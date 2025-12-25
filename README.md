@@ -108,7 +108,7 @@ Reports include:
 - 10 sessions per month
 - Basic web reports
 
-### Pro Plan ($9/month)
+### Pro Plan ($5/month)
 - Unlimited projects
 - Unlimited sessions
 - PDF export

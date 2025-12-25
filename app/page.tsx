@@ -181,7 +181,7 @@ export default function Home() {
                   Most Popular
                 </div>
                 <h4 className="text-2xl font-bold text-slate-900 mb-2">Pro</h4>
-                <p className="text-4xl font-bold text-slate-900 mb-4">$9<span className="text-lg text-slate-600">/mo</span></p>
+                <p className="text-4xl font-bold text-slate-900 mb-4">$5<span className="text-lg text-slate-600">/mo</span></p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 mt-1">✓</span>
