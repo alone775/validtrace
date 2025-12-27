@@ -33,6 +33,8 @@ interface ReportData {
 export default function ReportView({ data }: { data: ReportData }) {
   const reportRef = useRef<HTMLDivElement>(null)
   const [exporting, setExporting] = useState(false)
+  const [viewMode, setViewMode] = useState<'theme' | 'print'>('theme')
+  const isThemeMode = viewMode === 'theme'
 
   const { session, evidence, profile } = data
 
@@ -106,7 +108,29 @@ export default function ReportView({ data }: { data: ReportData }) {
 
   return (
     <div>
-      <div className="mb-6 flex gap-4 print:hidden justify-end">
+      <div className="mb-6 flex gap-4 print:hidden justify-end items-center">
+        {/* View Mode Toggle */}
+        <div className="bg-slate-100 dark:bg-slate-800 p-1 rounded-lg flex text-sm font-medium mr-auto">
+          <button
+            onClick={() => setViewMode('theme')}
+            className={`px-3 py-1.5 rounded-md transition-all ${viewMode === 'theme'
+                ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
+              }`}
+          >
+            Theme
+          </button>
+          <button
+            onClick={() => setViewMode('print')}
+            className={`px-3 py-1.5 rounded-md transition-all ${viewMode === 'print'
+                ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
+                : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
+              }`}
+          >
+            Print View
+          </button>
+        </div>
+
         <button
           onClick={handleExportPDF}
           disabled={exporting}
