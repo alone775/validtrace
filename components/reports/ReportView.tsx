@@ -130,17 +130,17 @@ export default function ReportView({ data }: { data: ReportData }) {
         </button>
       </div>
 
-      <div ref={reportRef} className="bg-white print:bg-white min-h-[297mm] mx-auto max-w-[210mm] shadow-2xl print:shadow-none mb-10 overflow-hidden relative">
+      <div ref={reportRef} className={`bg-white ${isThemeMode ? 'dark:bg-slate-950' : ''} print:bg-white min-h-[297mm] mx-auto max-w-[210mm] shadow-2xl print:shadow-none mb-10 overflow-hidden relative`}>
         {/* Header */}
-        <div className="bg-slate-900 text-white p-12 print:p-10">
+        <div className={`p-12 print:p-10 ${isThemeMode ? 'bg-slate-900 dark:bg-slate-950 text-white' : 'bg-white border-b-2 border-slate-900 text-slate-900'}`}>
           <div className="flex justify-between items-start">
             <div>
               <h1 className="text-3xl font-bold tracking-tight mb-2">Proof of Work</h1>
-              <p className="text-slate-400 font-medium">Session Report</p>
+              <p className={`${isThemeMode ? 'text-slate-400' : 'text-slate-600'} font-medium`}>Session Report</p>
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold mb-1">{session.title}</div>
-              <div className="text-sm text-slate-400 font-mono">ID: {session.id.slice(0, 8)}</div>
+              <div className={`text-sm ${isThemeMode ? 'text-slate-400' : 'text-slate-600'} font-mono`}>ID: {session.id.slice(0, 8)}</div>
             </div>
           </div>
         </div>
@@ -148,35 +148,35 @@ export default function ReportView({ data }: { data: ReportData }) {
         <div className="p-12 print:p-10">
           {/* Overview Grid */}
           <div className="mb-12">
-            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-6 border-b border-slate-100 pb-2">
+            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-6 border-b border-slate-100 dark:border-slate-800 pb-2">
               Session Overview
             </h2>
             <div className="grid grid-cols-3 gap-y-8 gap-x-12">
               <div>
                 <p className="text-xs text-slate-500 mb-1">Project</p>
-                <p className="font-semibold text-slate-900">{session.projects?.name}</p>
+                <p className={`font-semibold ${isThemeMode ? 'text-slate-900 dark:text-slate-100' : 'text-slate-900'}`}>{session.projects?.name}</p>
               </div>
               <div>
                 <p className="text-xs text-slate-500 mb-1">Client</p>
-                <p className="font-semibold text-slate-900">{session.projects?.client_name}</p>
+                <p className={`font-semibold ${isThemeMode ? 'text-slate-900 dark:text-slate-100' : 'text-slate-900'}`}>{session.projects?.client_name}</p>
               </div>
               <div>
                 <p className="text-xs text-slate-500 mb-1">Freelancer</p>
-                <p className="font-semibold text-slate-900">{profile?.full_name || 'N/A'}</p>
+                <p className={`font-semibold ${isThemeMode ? 'text-slate-900 dark:text-slate-100' : 'text-slate-900'}`}>{profile?.full_name || 'N/A'}</p>
               </div>
               <div>
                 <p className="text-xs text-slate-500 mb-1">Duration</p>
-                <p className="font-semibold text-slate-900 font-mono">{formatDuration(session.duration_minutes)}</p>
+                <p className={`font-semibold ${isThemeMode ? 'text-slate-900 dark:text-slate-100' : 'text-slate-900'} font-mono`}>{formatDuration(session.duration_minutes)}</p>
               </div>
               <div>
                 <p className="text-xs text-slate-500 mb-1">Started</p>
-                <p className="font-semibold text-slate-900">
+                <p className={`font-semibold ${isThemeMode ? 'text-slate-900 dark:text-slate-100' : 'text-slate-900'}`}>
                   {new Date(session.started_at).toLocaleDateString()} <span className="text-slate-400 text-xs ml-1">{new Date(session.started_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                 </p>
               </div>
               <div>
                 <p className="text-xs text-slate-500 mb-1">Completed</p>
-                <p className="font-semibold text-slate-900">
+                <p className={`font-semibold ${isThemeMode ? 'text-slate-900 dark:text-slate-100' : 'text-slate-900'}`}>
                   {session.ended_at ? (
                     <>
                       {new Date(session.ended_at).toLocaleDateString()} <span className="text-slate-400 text-xs ml-1">{new Date(session.ended_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
@@ -190,10 +190,10 @@ export default function ReportView({ data }: { data: ReportData }) {
           {/* Description */}
           {session.projects?.description && (
             <div className="mb-12">
-              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">
+              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-100 dark:border-slate-800 pb-2">
                 Project Scope
               </h2>
-              <div className="text-slate-600 text-sm leading-relaxed">
+              <div className={`text-sm leading-relaxed ${isThemeMode ? 'text-slate-600 dark:text-slate-300' : 'text-slate-600'}`}>
                 {session.projects.description}
               </div>
             </div>

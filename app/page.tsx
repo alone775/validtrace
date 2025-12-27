@@ -30,12 +30,12 @@ export default function Home() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section className="py-20 text-center">
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-5xl font-bold text-slate-900 dark:text-white mb-6">
             Evidence-Based Proof of Work
             <br />
             for Freelancers
           </h2>
-          <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
             Stop relying on screenshots and invasive tracking. Build trust with clients through
             structured evidence and professional reports. Privacy-first, client-shareable proof of work.
           </p>
@@ -48,7 +48,7 @@ export default function Home() {
             </Link>
             <Link
               href="/auth/login"
-              className="px-8 py-4 border-2 border-slate-300 text-slate-700 text-lg font-medium rounded-lg hover:border-slate-400 transition-colors"
+              className="px-8 py-4 border-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-lg font-medium rounded-lg hover:border-slate-400 dark:hover:border-slate-600 transition-colors"
             >
               Sign In
             </Link>
@@ -57,34 +57,34 @@ export default function Home() {
 
         <section className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-3xl mb-4">
+            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-3xl mb-4">
                 🔒
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Privacy-First</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Privacy-First</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 No screenshots, no keylogging, no invasive monitoring. Track your work with structured
                 evidence you control.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-              <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-3xl mb-4">
+            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center text-3xl mb-4">
                 📊
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Evidence-Based Trust</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Evidence-Based Trust</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 Build credibility with timestamped evidence entries, task completions, milestones, and
                 detailed work logs.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-              <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-3xl mb-4">
+            <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800">
+              <div className="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center text-3xl mb-4">
                 📄
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Professional Reports</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Professional Reports</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 Generate beautiful, shareable proof-of-work reports. Export as PDF or share secure web
                 links with clients.
               </p>
@@ -93,8 +93,8 @@ export default function Home() {
         </section>
 
         <section className="py-16">
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-12">
-            <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">How It Works</h3>
+          <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-12">
+            <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">How It Works</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">

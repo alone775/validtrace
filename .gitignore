@@ -36,3 +36,6 @@ ts-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private assets
+_private_assets/
