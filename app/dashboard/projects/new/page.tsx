@@ -52,20 +52,20 @@ export default function NewProjectPage() {
   return (
     <div className="max-w-3xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900">Create New Project</h1>
-        <p className="text-slate-600 mt-2">Add a new client project to track work sessions</p>
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Create New Project</h1>
+        <p className="text-slate-600 dark:text-slate-400 mt-2">Add a new client project to track work sessions</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+      <form onSubmit={handleSubmit} className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
+          <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 rounded-lg text-sm">
             {error}
           </div>
         )}
 
         <div className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Project Name *
             </label>
             <input
@@ -74,13 +74,13 @@ export default function NewProjectPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
               placeholder="Website Redesign"
             />
           </div>
 
           <div>
-            <label htmlFor="clientName" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="clientName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Client Name *
             </label>
             <input
@@ -89,13 +89,13 @@ export default function NewProjectPage() {
               value={clientName}
               onChange={(e) => setClientName(e.target.value)}
               required
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
               placeholder="Acme Corporation"
             />
           </div>
 
           <div>
-            <label htmlFor="clientEmail" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="clientEmail" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Client Email (Optional)
             </label>
             <input
@@ -103,14 +103,14 @@ export default function NewProjectPage() {
               type="email"
               value={clientEmail}
               onChange={(e) => setClientEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
               placeholder="client@example.com"
             />
-            <p className="text-sm text-slate-500 mt-1">For sharing proof-of-work reports</p>
+            <p className="text-sm text-slate-500 dark:text-slate-500 mt-1">For sharing proof-of-work reports</p>
           </div>
 
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="description" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Description (Optional)
             </label>
             <textarea
@@ -118,20 +118,20 @@ export default function NewProjectPage() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
               placeholder="Brief description of the project scope and deliverables"
             />
           </div>
 
           <div>
-            <label htmlFor="status" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="status" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Status
             </label>
             <select
               id="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors dark:bg-slate-900 dark:text-white"
             >
               <option value="active">Active</option>
               <option value="completed">Completed</option>
@@ -151,7 +151,7 @@ export default function NewProjectPage() {
           <button
             type="button"
             onClick={() => router.back()}
-            className="px-6 py-3 border border-slate-300 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition-colors"
+            className="px-6 py-3 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             Cancel
           </button>

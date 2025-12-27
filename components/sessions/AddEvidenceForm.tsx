@@ -57,18 +57,18 @@ export default function AddEvidenceForm({ sessionId }: { sessionId: string }) {
   ]
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 sticky top-6">
-      <h2 className="text-xl font-bold text-slate-900 mb-4">Add Evidence</h2>
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 sticky top-6">
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Add Evidence</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
+          <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 rounded-lg text-sm">
             {error}
           </div>
         )}
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-2">
+          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Type
           </label>
           <div className="grid grid-cols-2 gap-2">
@@ -79,8 +79,8 @@ export default function AddEvidenceForm({ sessionId }: { sessionId: string }) {
                 onClick={() => setType(evidenceType.value)}
                 className={`p-3 text-sm font-medium rounded-lg border-2 transition-colors ${
                   type === evidenceType.value
-                    ? 'border-blue-500 bg-blue-50 text-blue-700'
-                    : 'border-slate-200 text-slate-700 hover:border-slate-300'
+                    ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
+                    : 'border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'
                 }`}
               >
                 <span className="text-lg mr-1">{evidenceType.icon}</span>
@@ -91,7 +91,7 @@ export default function AddEvidenceForm({ sessionId }: { sessionId: string }) {
         </div>
 
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="title" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Title *
           </label>
           <input

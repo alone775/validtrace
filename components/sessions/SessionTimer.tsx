@@ -72,13 +72,13 @@ export default function SessionTimer({ session }: { session: Session }) {
   }
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-sm border-2 border-blue-200 p-8 mb-6">
+    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-slate-900 rounded-xl shadow-sm border-2 border-blue-200 dark:border-blue-900 p-8 mb-6">
       <div className="text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
           <span className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
-          <span className="text-sm font-medium text-blue-700">Session in Progress</span>
+          <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Session in Progress</span>
         </div>
-        <div className="text-6xl font-mono font-bold text-slate-900 mb-6">
+        <div className="text-6xl font-mono font-bold text-slate-900 dark:text-white mb-6">
           {formatTime(seconds)}
         </div>
         <div className="flex gap-4 justify-center">

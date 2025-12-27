@@ -117,20 +117,20 @@ export default function NewSessionPage() {
         <Link href="/dashboard/sessions" className="text-blue-600 hover:text-blue-700 text-sm mb-2 inline-block">
           ← Back to Sessions
         </Link>
-        <h1 className="text-3xl font-bold text-slate-900">New Work Session</h1>
-        <p className="text-slate-600 mt-2">Start tracking your work with a timer</p>
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-white">New Work Session</h1>
+        <p className="text-slate-600 dark:text-slate-400 mt-2">Start tracking your work with a timer</p>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
+          <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 rounded-lg text-sm">
             {error}
           </div>
         )}
 
         <div className="space-y-6">
           <div className="text-center py-8">
-            <div className="text-6xl font-mono font-bold text-slate-900 mb-6">
+            <div className="text-6xl font-mono font-bold text-slate-900 dark:text-white mb-6">
               {formatTime(seconds)}
             </div>
             <button
@@ -145,7 +145,7 @@ export default function NewSessionPage() {
           </div>
 
           <div>
-            <label htmlFor="title" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="title" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Session Title *
             </label>
             <input
@@ -154,13 +154,13 @@ export default function NewSessionPage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
               placeholder="What are you working on?"
             />
           </div>
 
           <div>
-            <label htmlFor="project" className="block text-sm font-medium text-slate-700 mb-2">
+            <label htmlFor="project" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Project *
             </label>
             <select
@@ -168,7 +168,7 @@ export default function NewSessionPage() {
               value={selectedProject}
               onChange={(e) => setSelectedProject(e.target.value)}
               required
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors dark:bg-slate-900 dark:text-white"
             >
               <option value="">Select a project</option>
               {projects.map((project) => (
@@ -180,7 +180,7 @@ export default function NewSessionPage() {
           </div>
 
           {projects.length === 0 && (
-            <div className="p-4 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-sm">
+            <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 rounded-lg text-sm">
               No active projects found.{' '}
               <Link href="/dashboard/projects/new" className="font-medium underline">
                 Create a project first
@@ -200,7 +200,7 @@ export default function NewSessionPage() {
           <button
             type="button"
             onClick={() => router.back()}
-            className="px-6 py-3 border border-slate-300 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition-colors"
+            className="px-6 py-3 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             Cancel
           </button>

@@ -124,14 +124,14 @@ export default function SubscriptionCard({
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-      <h2 className="text-xl font-bold text-slate-900 mb-6">Subscription & Usage</h2>
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6">
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Subscription & Usage</h2>
 
-      <div className="mb-6 p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
+      <div className="mb-6 p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-slate-900 rounded-lg border border-blue-200 dark:border-blue-900">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h3 className="text-2xl font-bold text-slate-900">{currentTier.name} Plan</h3>
-            <p className="text-lg text-slate-600">{currentTier.price}</p>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{currentTier.name} Plan</h3>
+            <p className="text-lg text-slate-600 dark:text-slate-300">{currentTier.price}</p>
           </div>
           {tier === 'free' && (
             <span className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium">
@@ -185,13 +185,13 @@ export default function SubscriptionCard({
 
           <div>
             <div className="flex justify-between text-sm mb-2">
-              <span className="text-slate-600">Sessions This Month</span>
+              <span className="text-slate-600 dark:text-slate-400">Sessions This Month</span>
               <span className={`font-medium ${getUsageColor(sessionsThisMonth, currentTier.limits.sessions)}`}>
                 {sessionsThisMonth} / {currentTier.limits.sessions === Infinity ? '∞' : currentTier.limits.sessions}
               </span>
             </div>
             {currentTier.limits.sessions !== Infinity && (
-              <div className="w-full bg-slate-200 rounded-full h-2">
+              <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
                 <div
                   className={`h-2 rounded-full ${sessionsThisMonth >= currentTier.limits.sessions
                     ? 'bg-red-600'

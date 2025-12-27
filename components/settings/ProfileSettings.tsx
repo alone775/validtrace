@@ -46,24 +46,24 @@ export default function ProfileSettings({ profile }: { profile: Profile }) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-      <h2 className="text-xl font-bold text-slate-900 mb-6">Profile Information</h2>
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6">
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Profile Information</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-          <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
+          <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 rounded-lg text-sm">
             {error}
           </div>
         )}
 
         {success && (
-          <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-sm">
+          <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 rounded-lg text-sm">
             {success}
           </div>
         )}
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Email
           </label>
           <input
@@ -71,13 +71,13 @@ export default function ProfileSettings({ profile }: { profile: Profile }) {
             type="email"
             value={profile?.email}
             disabled
-            className="w-full px-4 py-3 border border-slate-300 rounded-lg bg-slate-50 text-slate-500 cursor-not-allowed"
+            className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 cursor-not-allowed"
           />
-          <p className="text-xs text-slate-500 mt-1">Email cannot be changed</p>
+          <p className="text-xs text-slate-500 dark:text-slate-500 mt-1">Email cannot be changed</p>
         </div>
 
         <div>
-          <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Full Name
           </label>
           <input
@@ -85,13 +85,13 @@ export default function ProfileSettings({ profile }: { profile: Profile }) {
             type="text"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
             placeholder="John Doe"
           />
         </div>
 
         <div>
-          <label htmlFor="companyName" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor="companyName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Company Name (Optional)
           </label>
           <input
@@ -99,8 +99,8 @@ export default function ProfileSettings({ profile }: { profile: Profile }) {
             type="text"
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
-            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-            placeholder="Your Company"
+            className="w-full px-4 py-3 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+            placeholder="Acme Inc."
           />
         </div>
 

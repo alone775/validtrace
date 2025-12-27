@@ -41,14 +41,14 @@ export default async function SessionDetailPage({ params }: { params: Promise<{ 
         </Link>
         <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900">{session.title}</h1>
-            <p className="text-slate-600 mt-2">
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">{session.title}</h1>
+            <p className="text-slate-600 dark:text-slate-400 mt-2">
               📁 {session.projects?.name} - {session.projects?.client_name}
             </p>
           </div>
-          <span className={`px-4 py-2 rounded-full text-sm font-medium ${session.status === 'completed' ? 'bg-green-100 text-green-700' :
-              session.status === 'in_progress' ? 'bg-blue-100 text-blue-700' :
-                'bg-slate-100 text-slate-700'
+          <span className={`px-4 py-2 rounded-full text-sm font-medium ${session.status === 'completed' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+              session.status === 'in_progress' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
+                'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
             }`}>
             {session.status === 'in_progress' ? 'In Progress' :
               session.status === 'completed' ? 'Completed' : 'Draft'}
@@ -62,38 +62,38 @@ export default async function SessionDetailPage({ params }: { params: Promise<{ 
             <SessionTimer session={session} />
           )}
 
-          <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
-            <h2 className="text-xl font-bold text-slate-900 mb-4">Session Information</h2>
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 mb-6">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Session Information</h2>
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
-                <span className="text-slate-600">Started:</span>
-                <span className="font-medium text-slate-900">
+                <span className="text-slate-600 dark:text-slate-400">Started:</span>
+                <span className="font-medium text-slate-900 dark:text-white">
                   {new Date(session.started_at).toLocaleString()}
                 </span>
               </div>
               {session.ended_at && (
                 <div className="flex justify-between">
-                  <span className="text-slate-600">Ended:</span>
-                  <span className="font-medium text-slate-900">
+                  <span className="text-slate-600 dark:text-slate-400">Ended:</span>
+                  <span className="font-medium text-slate-900 dark:text-white">
                     {new Date(session.ended_at).toLocaleString()}
                   </span>
                 </div>
               )}
               <div className="flex justify-between">
-                <span className="text-slate-600">Duration:</span>
-                <span className="font-medium text-slate-900">
+                <span className="text-slate-600 dark:text-slate-400">Duration:</span>
+                <span className="font-medium text-slate-900 dark:text-white">
                   {Math.floor(session.duration_minutes / 60)}h {session.duration_minutes % 60}m
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-600">Evidence Entries:</span>
-                <span className="font-medium text-slate-900">{evidence?.length || 0}</span>
+                <span className="text-slate-600 dark:text-slate-400">Evidence Entries:</span>
+                <span className="font-medium text-slate-900 dark:text-white">{evidence?.length || 0}</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-            <h2 className="text-xl font-bold text-slate-900 mb-4">Evidence Timeline</h2>
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Evidence Timeline</h2>
             <EvidenceList evidence={evidence || []} />
           </div>
         </div>
